@@ -1,0 +1,22 @@
+# Netlify build settings for this Next.js app.
+#
+# Without this file Netlify often serves a 404 on every route, because it
+# publishes the wrong folder and never loads the Next.js runtime.
+#
+# IMPORTANT: if this project sits inside a subfolder in your Git repo
+# (e.g. repo/ecs-website/), set the base directory to that folder in
+# Netlify under Site configuration -> Build & deploy -> Build settings,
+# or uncomment the `base` line below and set it to the folder name.
+
+[build]
+  # base    = "ecs-website"
+  command = "npm run build"
+  publish = ".next"
+
+# Netlify installs this plugin automatically; it is what makes the App
+# Router, the API routes and the image optimiser work on Netlify.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+[build.environment]
+  NODE_VERSION = "20"
