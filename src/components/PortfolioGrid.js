@@ -51,26 +51,57 @@ export default function PortfolioGrid({ projects = [], categories = defaultCateg
                   <h3 className="ecs-project__title">{project.title}</h3>
                   <p className="ecs-project__text">{project.description}</p>
 
+                  {project.stack?.length ? (
+                    <div className="ecs-project__stack">
+                      {project.stack.slice(0, 3).map((tech) => (
+                        <span key={tech}>{tech}</span>
+                      ))}
+                    </div>
+                  ) : null}
+
                   {project.result ? (
-                    <p
-                      className="mb-2 mt-1"
-                      style={{
-                        fontSize: "0.76rem",
-                        fontWeight: 600,
-                        color: "var(--ecs-primary)",
-                      }}
-                    >
-                      <i className="bi bi-graph-up-arrow me-1" />
+                    <p className="ecs-project__result">
+                      <i className="bi bi-graph-up-arrow" />
                       {project.result}
                     </p>
                   ) : null}
 
-                  <Link
-                    href={`/contact?subject=${encodeURIComponent(project.category)}`}
-                    className="link-arrow mt-1"
-                  >
-                    View Project <i className="bi bi-arrow-right" />
-                  </Link>
+                  <div className="ecs-project__links">
+                    {project.demo ? (
+                      <a
+                        href={project.demo}
+                        className="ecs-project__btn is-primary"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="bi bi-box-arrow-up-right" />
+                        Live Demo
+                      </a>
+                    ) : null}
+
+                    {project.source ? (
+                      <a
+                        href={project.source}
+                        className="ecs-project__btn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <i className="bi bi-github" />
+                        Source
+                      </a>
+                    ) : null}
+
+                    {!project.demo && !project.source ? (
+                      <Link
+                        href={`/contact?subject=${encodeURIComponent(
+                          project.category
+                        )}`}
+                        className="link-arrow"
+                      >
+                        Ask About This <i className="bi bi-arrow-right" />
+                      </Link>
+                    ) : null}
+                  </div>
                 </div>
               </article>
             </div>

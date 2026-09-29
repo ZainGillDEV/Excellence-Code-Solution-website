@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 export default function ServiceCard({ service, detailed = false }) {
-  return (
-    <div className="ecs-card">
+  const href = `/services/${service.slug}`;
+
+  const body = (
+    <>
       <span className="ecs-card__icon">
         <i className={`bi ${service.icon}`} />
       </span>
@@ -13,13 +15,20 @@ export default function ServiceCard({ service, detailed = false }) {
       </p>
 
       {detailed ? (
-        <Link
-          href={`/contact?subject=${encodeURIComponent(service.title)}`}
-          className="link-arrow mt-3"
-        >
+        <span className="link-arrow mt-3">
           Learn More <i className="bi bi-arrow-right" />
-        </Link>
+        </span>
       ) : null}
-    </div>
+    </>
   );
+
+  if (detailed) {
+    return (
+      <Link href={href} className="ecs-card d-block">
+        {body}
+      </Link>
+    );
+  }
+
+  return <div className="ecs-card">{body}</div>;
 }

@@ -6,6 +6,7 @@ import "./globals.css";
 import BootstrapClient from "@/components/BootstrapClient";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SiteChrome from "@/components/SiteChrome";
 import { site } from "@/data/site";
 
 const inter = Inter({
@@ -67,9 +68,9 @@ export default function RootLayout({ children }) {
       className={`${inter.variable} ${poppins.variable} ${caveat.variable}`}
     >
       <body>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
+        <SiteChrome navbar={<Navbar />} footer={<Footer />}>
+          {children}
+        </SiteChrome>
         <BootstrapClient />
       </body>
     </html>
