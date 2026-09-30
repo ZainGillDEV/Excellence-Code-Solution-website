@@ -1,3 +1,15 @@
+/**
+ * Portfolio projects.
+ *
+ * DEMO LINKS — each project takes two optional links:
+ *
+ *   demo:   "https://your-project.vercel.app"   live site / app store page
+ *   source: "https://github.com/you/repo"       public repository
+ *
+ * Set either to null and that button is simply not shown, so a project with
+ * no public demo still looks finished. Paste your URLs in below.
+ */
+
 export const categories = [
   "All",
   "Web Development",
@@ -17,7 +29,8 @@ export const projects = [
     result: "2.4x increase in online revenue",
     stack: ["Next.js", "Node.js", "MongoDB", "Stripe"],
     theme: "web",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "fitness-tracker-app",
@@ -28,7 +41,8 @@ export const projects = [
     result: "40k+ downloads in the first quarter",
     stack: ["React Native", "Express", "PostgreSQL"],
     theme: "mobile",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "ai-chatbot-solution",
@@ -39,7 +53,8 @@ export const projects = [
     result: "68% of tickets resolved without an agent",
     stack: ["Python", "LangChain", "FastAPI", "Pinecone"],
     theme: "ai",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "brand-growth-campaign",
@@ -50,7 +65,8 @@ export const projects = [
     result: "200% lift in qualified leads",
     stack: ["SEO", "Google Ads", "Meta Ads", "GA4"],
     theme: "marketing",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "banking-dashboard",
@@ -61,7 +77,8 @@ export const projects = [
     result: "35% drop in support requests",
     stack: ["Figma", "Design System", "WCAG AA"],
     theme: "uiux",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "logistics-tracking-portal",
@@ -72,7 +89,8 @@ export const projects = [
     result: "Live visibility across 300+ vehicles",
     stack: ["React", "Node.js", "Socket.IO", "Redis"],
     theme: "web",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "document-intelligence",
@@ -83,7 +101,8 @@ export const projects = [
     result: "Manual review time cut by 70%",
     stack: ["Python", "Tesseract", "LLM", "Qdrant"],
     theme: "ai",
-    url: "#",
+    demo: null,
+    source: null,
   },
   {
     slug: "food-delivery-app",
@@ -94,7 +113,8 @@ export const projects = [
     result: "Average delivery time down 18%",
     stack: ["React Native", "Nest.js", "MongoDB"],
     theme: "mobile",
-    url: "#",
+    demo: null,
+    source: null,
   },
 ];
 
